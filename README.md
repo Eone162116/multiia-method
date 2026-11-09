@@ -2,7 +2,7 @@
 
 Working draft of a methods manuscript on a preregistered multi-agent framework for empirical inference under degeneracy, together with the protocol that governed its principal cases and its proposed revision.
 
-**Status: working draft v0.4 (9 November 2026).** The manuscript contains open items marked `[TO CONFIRM]`, `[TO INSERT]`, `[TO DECIDE]`, `[TO COMPLETE]`, `[TO VERIFY]`, `[TO DISCUSS]`, `[TO WRITE]` or `[PROPOSAL]`. It is not a submitted or published paper, and no journal submission or archive deposit has been made. This repository is the only place where it is published.
+**Status: working draft v0.4.1 (9 November 2026).** The manuscript contains open items marked `[TO CONFIRM]`, `[TO INSERT]`, `[TO DECIDE]`, `[TO COMPLETE]`, `[TO VERIFY]`, `[TO DISCUSS]`, `[TO WRITE]` or `[PROPOSAL]`. It is not a submitted or published paper, and no journal submission or archive deposit has been made. This repository is the only place where it is published.
 
 ## Contents
 

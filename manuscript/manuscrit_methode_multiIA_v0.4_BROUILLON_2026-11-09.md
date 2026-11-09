@@ -1,6 +1,6 @@
 # A preregistered multi-agent framework for empirical inference under degeneracy
 
-**Working draft v0.4 — 9 November 2026**  
+**Working draft v0.4.1 — 9 November 2026**  
 **Status:** methods manuscript. v0.4 aligns the text with protocol v2.3 DRAFT (merge of the 29 July amendment). v0.3 added the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
 **Scope:** methods paper; not a claim of new astrophysical or particle-physics discovery
 
@@ -756,7 +756,7 @@ This negative result is important for the protocol claim: a workflow that only r
 
 ### 8.1 Radial-velocity exoplanet transfer test (partial, 2/3)
 
-Before the principal transfers of Sections 5–7, the protocol (then v2.0) was applied to a first foreign domain, radial-velocity detection of exoplanets, in replication mode (28–29 July 2026). The design was a paired, three-branch test: a phantom (HD 41248, a 25.6-day signal attributed to stellar rotation, with the published conclusion that no planet is present; Faria et al. 2020), a real control (HD 219134 b, transiting, with an orthogonal verifier given by the transit; Gillon et al. 2017), and a synthetic control (a Keplerian signal with \(K=2.25\) m/s injected into the phantom's activity and sampling). A divergence from the expected verdict on at least one branch was defined in advance as a transfer failure.
+Before the principal transfers of Sections 5–7, the protocol (then v2.0) was applied to a first foreign domain, radial-velocity detection of exoplanets, in replication mode (28–29 July 2026). The design was a paired, three-branch test: a phantom (HD 41248, a 25.6-day signal attributed to stellar rotation, Faria et al. 2020 conclude that the radial-velocity variations are explained by stellar activity and that the data do not provide enough evidence for a planet; this reference verdict is a published model preference, not a proof of absence), a real control (HD 219134 b, transiting, with an orthogonal verifier given by the transit; Gillon et al. 2017), and a synthetic control (a Keplerian signal with \(K=2.25\) m/s injected into the phantom's activity and sampling). A divergence from the expected verdict on at least one branch was defined in advance as a transfer failure.
 
 The initial phantom target, \(\alpha\) Cen B (see Rajpaul et al. 2016 for the status of its putative planet), was abandoned before any decision run: its canonical dataset could not be retrieved by any automatic route, and a reconstruction failed an a priori fidelity gate (rms 12 against 1.5 m/s). The change was recorded in a dated addendum and the target became HD 41248.
 
