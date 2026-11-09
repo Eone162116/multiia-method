@@ -1,0 +1,7 @@
+# raw conversation exports and sealed or private material must never be versioned
+conversation_complete*
+*sealed_truth*
+truth_key*
+*.pkl
+.venv/
+__pycache__/

@@ -1,0 +1,2 @@
+a2ae6e5b5b3026f0d4c34c8582a9ea5a049656da1faedd977d03ab2aa79976c4  manuscript/manuscrit_methode_multiIA_v0.3_BROUILLON_2026-11-09.md
+a67183dea48f69afd3d2c115620d71fa328fe19f161bbefb4851f88553e7f1ad  protocol/protocole_recherche_multiIA_v2.2_FINAL_2026-08-31.md
