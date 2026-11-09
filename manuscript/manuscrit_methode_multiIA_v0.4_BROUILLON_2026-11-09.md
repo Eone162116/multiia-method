@@ -1,7 +1,7 @@
 # A preregistered multi-agent framework for empirical inference under degeneracy
 
-**Working draft v0.3 — 9 November 2026**  
-**Status:** methods manuscript. v0.3 adds the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
+**Working draft v0.4 — 9 November 2026**  
+**Status:** methods manuscript. v0.4 aligns the text with protocol v2.3 DRAFT (merge of the 29 July amendment). v0.3 added the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
 **Scope:** methods paper; not a claim of new astrophysical or particle-physics discovery
 
 ---
@@ -60,7 +60,7 @@ Every application of the protocol to date is listed below, whatever its outcome.
 | Application | Domain | Status in this paper | Outcome | Changed the protocol? |
 |---|---|---|---|---|
 | MaNGA \(n_g\) | galaxy kinematics | principal case (§4) | closed, non-identifiable (B2) | origin of the protocol (v1.0 derived retrospectively from it; v2.0 added the pre-committed stopping rule after its closure) |
-| RV exoplanets (HD 41248, HD 219134 b) | stellar activity vs. planets | development application (§8.1) | partial: 1/3 at v1, 2/3 at v2; v3 specified, not executed | lessons recorded in a 29 July amendment (P10, P11, accessible verifier, F14) that was not merged into the governing protocol |
+| RV exoplanets (HD 41248, HD 219134 b) | stellar activity vs. planets | development application (§8.1) | partial: 1/3 at v1, 2/3 at v2; v3 specified, not executed | lessons recorded in a 29 July amendment (P10, P11, accessible verifier, F14), merged into protocol v2.3 DRAFT on 9 November 2026, after the principal cases |
 | Moser's circle problem | experimental mathematics | illustrative demonstration (§8.2) | naive prediction (32) refuted; true value 31 | no change recorded |
 | CMS dimuon | particle physics | principal case (§5) | first benchmark rejected under F13 before analysis; second PASS 3/3 | yes: F13 |
 | TESS TOI 7698.01 | exoplanet candidate | principal case (§6) | SURVIVE, adjudication pending | no |
@@ -74,7 +74,7 @@ Every application of the protocol to date is listed below, whatever its outcome.
 
 Freeze dates (file timestamps, closure notes and protocol v2.2 FINAL, local time): MaNGA 28 July 2026 (m≥3 closure) and 27–31 August 2026 (B2, C1–C3); RV test 28–29 July 2026; CMS (v1 and v2), TESS and GWOSC all on 31 August 2026, between 17:14 (first CMS preregistration) and 21:32 (GWOSC closure note). [TO CONFIRM: the dates of the Moser, omics, finance and RAR/SPARC applications (the Moser, omics and finance demonstrations were run in a late-July 2026 working session), and any application still missing from this table.]
 
-**Selection of the principal cases.** The RV test was the protocol's first transfer to a foreign domain; the mathematical case is a didactic example with a known answer. The lessons of the RV test were recorded in an amendment dated 29 July 2026 (P10, P11, an accessible-verifier requirement and F14), headed "to be merged" into the v2.0 protocol, and they were never merged: protocol v2.1 and v2.2 FINAL, both of 31 August 2026, list nine principles and do not mention that test. The principal cases of §§5–7 were frozen and closed on 31 August 2026, after v2.2 FINAL was finalised (17:04, ten minutes before the first CMS preregistration), so they were governed by v2.2 FINAL and not by the amended protocol. [TO CONFIRM: whether the lessons of the RV test were nevertheless applied to §§5–7 by hand, and that neither development application was left out because of its outcome.]
+**Selection of the principal cases.** The RV test was the protocol's first transfer to a foreign domain; the mathematical case is a didactic example with a known answer. The lessons of the RV test were recorded in an amendment dated 29 July 2026 (P10, P11, an accessible-verifier requirement and F14), headed "to be merged" into the v2.0 protocol, and they were never merged: protocol v2.1 and v2.2 FINAL, both of 31 August 2026, list nine principles and do not mention that test. The principal cases of §§5–7 were frozen and closed on 31 August 2026, after v2.2 FINAL was finalised (17:04, ten minutes before the first CMS preregistration), so they were governed by v2.2 FINAL and not by the amended protocol. The amendment was merged afterwards, on 9 November 2026, into protocol v2.3 DRAFT (`protocol/` in this repository). [TO CONFIRM: whether the lessons of the RV test were nevertheless applied to §§5–7 by hand, and that neither development application was left out because of its outcome.]
 
 
 ---
@@ -181,7 +181,7 @@ The protocol was not designed perfectly in advance. Several of its strongest rul
 
 ### 3.0 Catalogue of failure modes and numbering
 
-The failure modes observed during development are catalogued below; §§3.1–3.3 describe the three most recent in detail. F1–F10 are taken from protocol v2.0, F11 (v2.1, 31 August 2026) and F12 (v2.2 FINAL, 31 August 2026) from the governing protocol, and F13 is introduced by this manuscript after v2.2 FINAL. F14 comes from an amendment of 29 July 2026 that was never merged into the governing protocol, where it was labelled F11.
+The failure modes observed during development are catalogued below; §§3.1–3.3 describe the three most recent in detail. F1–F10 are taken from protocol v2.0, F11 (v2.1, 31 August 2026) and F12 (v2.2 FINAL, 31 August 2026) from the governing protocol, and F13 was introduced after v2.2 FINAL (CMS case) and added to v2.3 DRAFT. F14 comes from an amendment of 29 July 2026 that was merged into the protocol only on 9 November 2026 (v2.3 DRAFT), where it was labelled F11.
 
 | Code | Failure mode |
 |---|---|
@@ -198,7 +198,7 @@ The failure modes observed during development are catalogued below; §§3.1–3.
 | F11 | Post-null pivot disguised as robustness (v2.1; §3.1): after a closure criterion has been met, a new test is proposed as "decisive"; a specialisation of F6 |
 | F12 | Executed code differs from frozen or archived code (§3.2) |
 | F13 | Endogenous verifier or circular benchmark (§3.3) |
-| F14 | Erroneous self-diagnosis applied without test (29 July 2026 amendment, unmerged, where it was labelled F11): a predicted fix tightened the null instead of widening it |
+| F14 | Erroneous self-diagnosis applied without test (29 July 2026 amendment, merged into v2.3 DRAFT on 9 November 2026, where it was labelled F11): a predicted fix tightened the null instead of widening it |
 
 [TO CONFIRM: the status of F10. Proposed wording for F10: the corrected archive was prepared but not deposited, and the original public record remains online with the defect described above.]
 
@@ -236,7 +236,7 @@ The recovered preregistration,
 
 `2a64a52aa20fc92669681a182ad2f16325daf2c109f3e56886527e61bddc6104`.
 
-Protocol v2.2 FINAL, finalised on 31 August 2026 at 17:04, still records this artefact as unrecovered (status `EXECUTION_PASS_PREREG_MISSING`, 16 source artifacts) and treats its absence as a permanent provenance exception. The archive described here (17 source artifacts, `STATUS = PASS`) is the later one, in which the preregistration was found and verified by hash. The recovered files carry last-modified times of 27 August 2026 (14:24 to 14:26), before the first C1 output file (31 August, 11:39); file timestamps support the prospective ordering but do not prove it. The recovered copies were created on 31 August 2026 at 18:24, eighty minutes after v2.2 FINAL, so the protocol note was accurate when written and became outdated that evening. [TO CONFIRM: that the protocol note has been, or will be, updated.]
+Protocol v2.2 FINAL, finalised on 31 August 2026 at 17:04, still records this artefact as unrecovered (status `EXECUTION_PASS_PREREG_MISSING`, 16 source artifacts) and treats its absence as a permanent provenance exception. The archive described here (17 source artifacts, `STATUS = PASS`) is the later one, in which the preregistration was found and verified by hash. The recovered files carry last-modified times of 27 August 2026 (14:24 to 14:26), before the first C1 output file (31 August, 11:39); file timestamps support the prospective ordering but do not prove it. The recovered copies were created on 31 August 2026 at 18:24, eighty minutes after v2.2 FINAL, so the protocol note was accurate when written and became outdated that evening. The protocol note was updated on 9 November 2026 (v2.3 DRAFT, section 5, "Mise à jour de provenance").
 
 This incident motivated a stronger definition of reproducibility: the code in the archive must be the code that actually regenerated the published numbers.
 
@@ -762,7 +762,7 @@ The initial phantom target, \(\alpha\) Cen B (see Rajpaul et al. 2016 for the st
 
 Two preregistered iterations were run. In v1 the thresholds were transferred from the control, and 1/3 branches gave the expected verdict (the control only). In v2 the thresholds were calibrated per target and the null hyperparameters were marginalised; 2/3 branches gave the expected verdict (control and injection recovery) and the phantom remained in the grey zone. No threshold was moved after a decision run. A v3 based on Bayesian evidence was specified but not executed, and the test was closed by human decision with a known path to resolution.
 
-The lessons recorded in the 29 July amendment were: the verifier must be accessible, not only exact and exogenous; decision thresholds must be calibrated per target (P10); the decision statistic must match the nuisance mechanism (P11); and an untested self-diagnosis proved wrong (F14). The amendment was headed "to be merged" and was not: protocol v2.1 of 31 August (written after B2) and v2.2 FINAL contain neither P10, P11 nor F14, and use the label F11 for another failure mode (§3.0). The first transfer test thus left its lessons outside the document that governed the principal cases. [TO DECIDE: merge these items into a next version of the protocol.]
+The lessons recorded in the 29 July amendment were: the verifier must be accessible, not only exact and exogenous; decision thresholds must be calibrated per target (P10); the decision statistic must match the nuisance mechanism (P11); and an untested self-diagnosis proved wrong (F14). The amendment was headed "to be merged" and was not: protocol v2.1 of 31 August (written after B2) and v2.2 FINAL contain neither P10, P11 nor F14, and use the label F11 for another failure mode (§3.0). The first transfer test thus left its lessons outside the document that governed the principal cases. They were merged on 9 November 2026 into protocol v2.3 DRAFT (principles P10 and P11, failure mode F14 and an accessible-verifier requirement in the central theorem), after the principal cases had been closed.
 
 ### 8.2 Mathematical demonstration (illustrative)
 
@@ -902,7 +902,7 @@ Eighth, the GWOSC preregistration contained a small numerical specification mism
 
 Ninth, the protocol has not yet produced a fully externally adjudicated natural `GRAY` case. GWOSC produced `GRAY` for a known strong event, but that was a classifier failure, not an unresolved external truth state.
 
-Tenth, all applications were designed and executed by one author with several AI systems, and none has been independently reproduced. Eleventh, the principal cases were governed by protocol v2.2 FINAL, which does not incorporate the lessons recorded after the first, partially failed, transfer test (§8.1). Twelfth, the three latest principal cases (CMS, TESS, GWOSC) were designed, run and closed within a single day (31 August 2026, about four hours), so no interval for reflection separated them, and the governing protocol (v2.2 FINAL) was itself finalised ten minutes before the first of them; this is consistent with the low-friction setting the paper addresses, but it limits the scrutiny each case received.
+Tenth, all applications were designed and executed by one author with several AI systems, and none has been independently reproduced. Eleventh, the principal cases were governed by protocol v2.2 FINAL, which does not incorporate the lessons recorded after the first, partially failed, transfer test (§8.1); the merge into v2.3 DRAFT came only afterwards (9 November 2026). Twelfth, the three latest principal cases (CMS, TESS, GWOSC) were designed, run and closed within a single day (31 August 2026, about four hours), so no interval for reflection separated them, and the governing protocol (v2.2 FINAL) was itself finalised ten minutes before the first of them; this is consistent with the low-friction setting the paper addresses, but it limits the scrutiny each case received.
 
 ---
 
@@ -1006,7 +1006,7 @@ The next evaluation step should not be another scientific domain. It should be e
 
 **Use of AI.** The analyses, simulations and drafts of this work were produced by the author with several AI systems (Claude, ChatGPT, DeepSeek and Grok) in the roles described in Section 2.1. The author made every decision on freezing, closure and interpretation. No AI system is an author. [TO COMPLETE: which system performed which role in which case.]
 
-**Availability.** Code, preregistrations, manifests and hashes are published on GitHub only: [TO INSERT: repository URL and freeze tag]. No journal submission and no other archive deposit has been made.
+**Availability.** Code, preregistrations, manifests and hashes are published on GitHub only: https://github.com/Eone162116/multiia-method (working draft tagged `v0.4-draft`; [TO INSERT: freeze tag of the final version]). No journal submission and no other archive deposit has been made.
 
 **Known integrity incident.** F10 (§3.0) concerns an earlier public archive record. [TO CONFIRM wording: the corrected archive was prepared but not deposited, and the original record remains online with the defect described.]
 
