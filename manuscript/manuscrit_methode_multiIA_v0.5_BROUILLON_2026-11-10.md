@@ -1,7 +1,7 @@
 # A preregistered multi-agent framework for empirical inference under degeneracy
 
-**Working draft v0.4.1 — 9 November 2026**  
-**Status:** methods manuscript. v0.4 aligns the text with protocol v2.3 DRAFT (merge of the 29 July amendment). v0.3 added the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
+**Working draft v0.5 — 10 November 2026**  
+**Status:** methods manuscript. v0.5 adds F15 and F16 (§3.4). v0.4 aligned the text with protocol v2.3 DRAFT (merge of the 29 July amendment). v0.3 added the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
 **Scope:** methods paper; not a claim of new astrophysical or particle-physics discovery
 
 ---
@@ -181,7 +181,7 @@ The protocol was not designed perfectly in advance. Several of its strongest rul
 
 ### 3.0 Catalogue of failure modes and numbering
 
-The failure modes observed during development are catalogued below; §§3.1–3.3 describe the three most recent in detail. F1–F10 are taken from protocol v2.0, F11 (v2.1, 31 August 2026) and F12 (v2.2 FINAL, 31 August 2026) from the governing protocol, and F13 was introduced after v2.2 FINAL (CMS case) and added to v2.3 DRAFT. F14 comes from an amendment of 29 July 2026 that was merged into the protocol only on 9 November 2026 (v2.3 DRAFT), where it was labelled F11.
+The failure modes observed during development are catalogued below; §§3.1–3.3 describe the three most recent in detail. F1–F10 are taken from protocol v2.0, F11 (v2.1, 31 August 2026) and F12 (v2.2 FINAL, 31 August 2026) from the governing protocol, and F13 was introduced after v2.2 FINAL (CMS case) and added to v2.3 DRAFT. F14 comes from an amendment of 29 July 2026 that was merged into the protocol only on 9 November 2026 (v2.3 DRAFT), where it was labelled F11. F15 and F16 come from the reference audit of 9 November 2026 (§3.4) and are proposed for the next protocol version.
 
 | Code | Failure mode |
 |---|---|
@@ -198,6 +198,8 @@ The failure modes observed during development are catalogued below; §§3.1–3.
 | F11 | Post-null pivot disguised as robustness (v2.1; §3.1): after a closure criterion has been met, a new test is proposed as "decisive"; a specialisation of F6 |
 | F12 | Executed code differs from frozen or archived code (§3.2) |
 | F13 | Endogenous verifier or circular benchmark (§3.3) |
+| F15 | Verifier false negative by registry mismatch: a valid DOI is declared unresolvable because it was queried in the wrong registration agency, for example a DataCite DOI queried at CrossRef (§3.4) |
+| F16 | Citation that resolves but does not support its claim: the DOI exists but its metadata differ from the citation, or the attached claim is stronger than the source's own conclusion (§3.4) |
 | F14 | Erroneous self-diagnosis applied without test (29 July 2026 amendment, merged into v2.3 DRAFT on 9 November 2026, where it was labelled F11): a predicted fix tightened the null instead of widening it |
 
 [TO CONFIRM: the status of F10. Proposed wording for F10: the corrected archive was prepared but not deposited, and the original public record remains online with the defect described above.]
@@ -259,6 +261,15 @@ A corrected version prohibited all classifier calls during construction. The bui
 F13 is therefore:
 
 > a benchmark whose nominal truth or case admission rule depends on the classifier or decision rule that the benchmark is supposed to evaluate.
+
+
+### 3.4 F15 and F16: reference-audit failures (9 November 2026)
+
+Two failures of the reference check itself were found while auditing the twelve references of the v0.2 manuscript. An exogenous check can be wrong in either direction: F15 flagged a valid reference as broken, and F16 passed an inexact one as clean.
+
+**F15.** An earlier audit (October 2026) had declared the GWOSC O4b data-release DOI (10.7935/8emv-ag54) unresolvable. On 9 November 2026 it resolved by three independent routes: the DataCite API, the doi.org redirect, and the GWOSC page itself, which prints it as its dataset DOI. CrossRef returns 404 for this DOI because the prefix 10.7935 is registered with DataCite, so the earlier check most plausibly queried the wrong agency; the method it actually used is not documented. [TO CONFIRM] On 8 November an AI assistant repeated the "unresolvable" status from an earlier note into a task and a status page, before re-verifying it. Counter-measure: determine the registration agency first (`doi.org/doiRA`), query that agency, and confirm with a second route before any DOI is declared broken.
+
+**F16.** Two kinds of citation resolved but did not support what was attached to them. First, the STScI/MAST entry for the TESS products resolved, but the resolved titles, authors and year (TESS-SPOC: Caldwell, Jenkins and Ting, 2020; QLP: Huang, 2020) differed from the citation text ("TESS mission data products", author "STScI/MAST", 2026), and one product actually used, the 2-minute SPOC light curves, had no DOI at all. Second, in the radial-velocity development application (§8.1), the 29 July amendment stated the reference verdicts of the phantoms more strongly than their sources: it described α Cen Bb as having the cleanest possible ground truth and as conceded by its discoverer, whereas Rajpaul et al. (2016) show that the signal almost certainly arises from the window function of the data; and it described HD 41248 as having a definitive ground truth, whereas Faria et al. (2020) conclude that the variations can be explained by stellar activity and that the data do not provide enough evidence for a planet. Both were corrected on 9 November 2026. Counter-measure: compare the resolved metadata with the citation field by field, and the attached claim with the source's own conclusion, not only the existence of the reference.
 
 ---
 
@@ -1006,7 +1017,7 @@ The next evaluation step should not be another scientific domain. It should be e
 
 **Use of AI.** The analyses, simulations and drafts of this work were produced by the author with several AI systems (Claude, ChatGPT, DeepSeek and Grok) in the roles described in Section 2.1. The author made every decision on freezing, closure and interpretation. No AI system is an author. [TO COMPLETE: which system performed which role in which case.]
 
-**Availability.** Code, preregistrations, manifests and hashes are published on GitHub only: https://github.com/Eone162116/multiia-method (working draft tagged `v0.4-draft`; [TO INSERT: freeze tag of the final version]). No journal submission and no other archive deposit has been made.
+**Availability.** Code, preregistrations, manifests and hashes are published on GitHub only: https://github.com/Eone162116/multiia-method (working draft tagged `v0.5-draft`; [TO INSERT: freeze tag of the final version]). No journal submission and no other archive deposit has been made.
 
 **Known integrity incident.** F10 (§3.0) concerns an earlier public archive record. [TO CONFIRM wording: the corrected archive was prepared but not deposited, and the original record remains online with the defect described.]
 
