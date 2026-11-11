@@ -1,7 +1,7 @@
 # A preregistered multi-agent framework for empirical inference under degeneracy
 
-**Working draft v0.5 — 10 November 2026**  
-**Status:** methods manuscript. v0.5 adds F15 and F16 (§3.4). v0.4 aligned the text with protocol v2.3 DRAFT (merge of the 29 July amendment). v0.3 added the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
+**Working draft v0.5.1 — 11 November 2026**  
+**Status:** methods manuscript. v0.5.1 corrects the two GWOSC references against their DataCite records and adds the open-data paper (third occurrence of F16, §3.4). v0.5 adds F15 and F16 (§3.4). v0.4 aligned the text with protocol v2.3 DRAFT (merge of the 29 July amendment). v0.3 added the ledger of all applications (§1.2), the failure-mode catalogue (§3.0), the development cases (§8.1–8.2), refutation criteria (§9.7) and declarations. Items in [TO CONFIRM / TO INSERT / TO DECIDE] need the author's decision or data.  
 **Scope:** methods paper; not a claim of new astrophysical or particle-physics discovery
 
 ---
@@ -269,7 +269,7 @@ Two failures of the reference check itself were found while auditing the twelve 
 
 **F15.** An earlier audit (October 2026) had declared the GWOSC O4b data-release DOI (10.7935/8emv-ag54) unresolvable. On 9 November 2026 it resolved by three independent routes: the DataCite API, the doi.org redirect, and the GWOSC page itself, which prints it as its dataset DOI. CrossRef returns 404 for this DOI because the prefix 10.7935 is registered with DataCite, so the earlier check most plausibly queried the wrong agency; the method it actually used is not documented. [TO CONFIRM] On 8 November an AI assistant repeated the "unresolvable" status from an earlier note into a task and a status page, before re-verifying it. Counter-measure: determine the registration agency first (`doi.org/doiRA`), query that agency, and confirm with a second route before any DOI is declared broken.
 
-**F16.** Two kinds of citation resolved but did not support what was attached to them. First, the STScI/MAST entry for the TESS products resolved, but the resolved titles, authors and year (TESS-SPOC: Caldwell, Jenkins and Ting, 2020; QLP: Huang, 2020) differed from the citation text ("TESS mission data products", author "STScI/MAST", 2026), and one product actually used, the 2-minute SPOC light curves, had no DOI at all. Second, in the radial-velocity development application (§8.1), the 29 July amendment stated the reference verdicts of the phantoms more strongly than their sources: it described α Cen Bb as having the cleanest possible ground truth and as conceded by its discoverer, whereas Rajpaul et al. (2016) show that the signal almost certainly arises from the window function of the data; and it described HD 41248 as having a definitive ground truth, whereas Faria et al. (2020) conclude that the variations can be explained by stellar activity and that the data do not provide enough evidence for a planet. Both were corrected on 9 November 2026. Counter-measure: compare the resolved metadata with the citation field by field, and the attached claim with the source's own conclusion, not only the existence of the reference.
+**F16.** Two kinds of citation resolved but did not support what was attached to them. First, the STScI/MAST entry for the TESS products resolved, but the resolved titles, authors and year (TESS-SPOC: Caldwell, Jenkins and Ting, 2020; QLP: Huang, 2020) differed from the citation text ("TESS mission data products", author "STScI/MAST", 2026), and one product actually used, the 2-minute SPOC light curves, had no DOI at all. Second, in the radial-velocity development application (§8.1), the 29 July amendment stated the reference verdicts of the phantoms more strongly than their sources: it described α Cen Bb as having the cleanest possible ground truth and as conceded by its discoverer, whereas Rajpaul et al. (2016) show that the signal almost certainly arises from the window function of the data; and it described HD 41248 as having a definitive ground truth, whereas Faria et al. (2020) conclude that the variations can be explained by stellar activity and that the data do not provide enough evidence for a planet. Both were corrected on 9 November 2026. A third occurrence was found on 11 November 2026 in the two GWOSC references, which the audit behind F15 had checked for resolution only. The reference list gave "GWOSC" as author and the headings of the landing pages as titles ("The O4b Data Release", "GWTC-5.0 Data Release Documentation"), whereas DataCite registers both datasets under the LIGO Scientific, KAGRA and Virgo Collaborations, with GWOSC as publisher and the titles "LVK bulk data release for O4b Observing Run" and "LVK data release for GWTC-5 Catalog". The paper that describes the release (arXiv:2605.27090) was not cited. The entries now follow the registered metadata and the paper is cited. [TO CONFIRM: against the references requested on the GWOSC acknowledgement page, which this audit did not read.] Counter-measure: compare the resolved metadata with the citation field by field, and the attached claim with the source's own conclusion, not only the existence of the reference.
 
 ---
 
@@ -632,13 +632,13 @@ However, this is not an independent TESS discovery experiment. Target selection 
 
 The first three cases did not combine all of the following: raw time-series data, multiple detectors, non-Gaussian transient noise, a waveform bank, empirical inter-detector backgrounds, and a strict possibility that the transferred implementation itself would fail.
 
-The GWOSC benchmark was therefore preregistered as a **heavy final active benchmark**, not as a new gravitational-wave search. O4b public strain data are available from LIGO Hanford (H1), LIGO Livingston (L1), and Virgo (V1), and GWTC-5.0 documents probable O4b events and provides associated strain products. GWTC-5.0 includes events with \(p_{\rm astro}>0.5\), while the public release provides data-quality information and event-level strain (GWOSC 2026a,b).
+The GWOSC benchmark was therefore preregistered as a **heavy final active benchmark**, not as a new gravitational-wave search. O4b public strain data are available from LIGO Hanford (H1), LIGO Livingston (L1), and Virgo (V1), and GWTC-5.0 documents probable O4b events and provides associated strain products. GWTC-5.0 includes events with \(p_{\rm astro}>0.5\), while the public release provides data-quality information and event-level strain (LIGO Scientific Collaboration et al. 2026a,b,c).
 
 The simplified analysis used PyCBC matched filtering, whose established scientific use relies on substantially richer ranking statistics, vetoes, banks, and background estimation than the deliberately compact benchmark implemented here (Usman et al. 2016). Consequently, the benchmark result evaluates **our frozen transfer implementation**, not LVK event validity or the PyCBC search itself.
 
 ### 7.2 Metadata-only case selection
 
-Before strain access, a selector queried GWTC-5.0 metadata (GWOSC 2026b) and froze two real events.
+Before strain access, a selector queried GWTC-5.0 metadata (LIGO Scientific Collaboration et al. 2026b) and froze two real events.
 
 The `STRONG` rule required H1 and L1, \(p_{\rm astro}\ge0.99\), network SNR \(\ge12\), and selected the earliest admissible event by GPS time. This yielded
 
@@ -1017,7 +1017,9 @@ The next evaluation step should not be another scientific domain. It should be e
 
 **Use of AI.** The analyses, simulations and drafts of this work were produced by the author with several AI systems (Claude, ChatGPT, DeepSeek and Grok) in the roles described in Section 2.1. The author made every decision on freezing, closure and interpretation. No AI system is an author. [TO COMPLETE: which system performed which role in which case.]
 
-**Availability.** Code, preregistrations, manifests and hashes are published on GitHub only: https://github.com/Eone162116/multiia-method (working draft tagged `v0.5-draft`; [TO INSERT: freeze tag of the final version]). No journal submission and no other archive deposit has been made.
+**Availability.** Code, preregistrations, manifests and hashes are published on GitHub only: https://github.com/Eone162116/multiia-method (working draft tagged `v0.5.1-draft`; [TO INSERT: freeze tag of the final version]). No journal submission and no other archive deposit has been made.
+
+**Data acknowledgements.** [TO INSERT: the acknowledgement texts requested by the data providers whose data were used (SDSS-IV/MaNGA, MAST/TESS, CERN Open Data, GWOSC); none is included in this draft.]
 
 **Known integrity incident.** F10 (§3.0) concerns an earlier public archive record. [TO CONFIRM wording: the corrected archive was prepared but not deposited, and the original record remains online with the defect described.]
 
@@ -1033,15 +1035,17 @@ Faria, J. P., Adibekyan, V., Amazo-Gómez, E. M., et al. (2020). *Decoding the r
 
 Gillon, M., Demory, B.-O., Van Grootel, V., et al. (2017). *Two massive rocky planets transiting a K-dwarf 6.5 parsecs away.* **Nature Astronomy, 1**, 0056. https://doi.org/10.1038/s41550-017-0056
 
-GWOSC (2026a). *The O4b Data Release.* Gravitational Wave Open Science Center. Dataset DOI: https://doi.org/10.7935/8emv-ag54
-
-GWOSC (2026b). *GWTC-5.0 Data Release Documentation.* Gravitational Wave Open Science Center. Data-release DOI: https://doi.org/10.7935/bk00-6a89
-
 Huang, C. X. (2020). *TESS Lightcurves From The MIT Quick-Look Pipeline ("QLP").* STScI/MAST. https://doi.org/10.17909/t9-r086-e880
 
 Lelli, F., McGaugh, S. S., & Schombert, J. M. (2016). *SPARC: Mass models for 175 disk galaxies with Spitzer photometry and accurate rotation curves.* **The Astronomical Journal, 152**, 157. https://doi.org/10.3847/0004-6256/152/6/157
 
 Li, P., Lelli, F., McGaugh, S., & Schombert, J. (2020). *A comprehensive catalog of dark matter halo models for SPARC galaxies.* **The Astrophysical Journal Supplement Series, 247**, 31. https://doi.org/10.3847/1538-4365/ab700e
+
+LIGO Scientific Collaboration, KAGRA Collaboration, & Virgo Collaboration (2026a). *LVK bulk data release for O4b Observing Run.* Gravitational Wave Open Science Center. Dataset; landing page "The O4b Data Release". https://doi.org/10.7935/8emv-ag54
+
+LIGO Scientific Collaboration, KAGRA Collaboration, & Virgo Collaboration (2026b). *LVK data release for GWTC-5 Catalog.* Gravitational Wave Open Science Center. Dataset; landing page "GWTC-5.0 Data Release Documentation". https://doi.org/10.7935/bk00-6a89
+
+LIGO Scientific Collaboration, Virgo Collaboration, & KAGRA Collaboration (2026c). *Open Data from LIGO, Virgo, and KAGRA through the Second Part of the Fourth Observing Run.* arXiv:2605.27090. https://arxiv.org/abs/2605.27090
 
 McCauley, T. (2014). *Dimuon event information derived from the Run2010B public Mu dataset.* CERN Open Data Portal. https://doi.org/10.7483/OPENDATA.CMS.CB8H.MFFA
 
